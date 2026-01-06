@@ -32,7 +32,10 @@ def download_resumes_from_csv(
     os.makedirs(output_dir, exist_ok=True)
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=headless)
+        browser = p.chromium.launch(
+            headless=headless,
+            args=["--no-sandbox", "--disable-dev-shm-usage"],
+        )
         context = browser.new_context(accept_downloads=True)
         page = context.new_page()
 
