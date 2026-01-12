@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/bash
+set -e
 
-# Install Playwright browser binaries needed at runtime on Streamlit Cloud.
 python -m playwright install chromium
