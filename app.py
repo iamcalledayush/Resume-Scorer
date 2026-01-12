@@ -549,6 +549,7 @@ def main():
         "technical-fit scores and a competitive ranking across all resumes.</p></div>",
         unsafe_allow_html=True,
     )
+    OPENAI_API_KEY = st.secrets.get("OPENAI_API_KEY", os.getenv("OPENAI_API_KEY", ""))
 
     api_key = os.getenv("OPENAI_API_KEY", "")
     if api_key:
