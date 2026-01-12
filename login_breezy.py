@@ -4,7 +4,7 @@ import time
 
 from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright
-
+import streamlit as st
 load_dotenv()
 
 DEFAULT_OUTPUT_DIR = "resume_pdfs"
