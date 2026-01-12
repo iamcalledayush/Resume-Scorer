@@ -22,8 +22,10 @@ def download_resumes_from_csv(
 
     Credentials are read from BREEZY_EMAIL and BREEZY_PASSWORD.
     """
-    email = os.getenv("BREEZY_EMAIL")
-    password = os.getenv("BREEZY_PASSWORD")
+    BREEZY_EMAIL = st.secrets.get("BREEZY_EMAIL", os.getenv("BREEZY_EMAIL", ""))
+    BREEZY_PASSWORD = st.secrets.get("BREEZY_PASSWORD", os.getenv("BREEZY_PASSWORD", ""))
+    email = BREEZY_EMAIL
+    password = BREEZY_PASSWORD
     if not email or not password:
         raise RuntimeError(
             "BREEZY_EMAIL and BREEZY_PASSWORD must be set in the environment."
